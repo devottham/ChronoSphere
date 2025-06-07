@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Sphere - Premium Countdown Timer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-display">
+            <button class="menu-btn pulse" id="menuBtn">
+                <i class="fas fa-cog"></i>
+            </button>
+            
+            <div class="header">
+                <h1 class="title">CHRONO SPHERE</h1>
+                <p class="subtitle">Elegant Countdowns for Special Moments</p>
+            </div>
+            
+            <div class="dynamic-quote" id="dynamicQuote">
+                Every moment is a new opportunity. Set your timer and make it extraordinary!
+            </div>
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="days">00</div>
+                    <div class="countdown-label">DAYS</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">HOURS</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">MINUTES</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">SECONDS</div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="control-btn start-btn" id="startBtn">
+                    <i class="fas fa-play"></i> START
+                </button>
+                <button class="control-btn pause-btn" id="pauseBtn">
+                    <i class="fas fa-pause"></i> PAUSE
+                </button>
+                <button class="control-btn reset-btn" id="resetBtn">
+                    <i class="fas fa-redo"></i> RESET
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="settings-menu" id="settingsMenu">
+        <div class="settings-header">
+            <h2 class="settings-title">CONTROL PANEL</h2>
+            <button class="close-btn" id="closeBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="settings-section fade-in">
+            <h3 class="section-title"><i class="fas fa-clock"></i> TIMER SETTINGS</h3>
+            
+            <div class="form-group">
+                <label for="daysInput"><i class="fas fa-calendar-day"></i> DAYS</label>
+                <input type="number" id="daysInput" min="0" value="0" class="input-field">
+            </div>
+            
+            <div class="form-group">
+                <label for="hoursInput"><i class="fas fa-hourglass-half"></i> HOURS</label>
+                <input type="number" id="hoursInput" min="0" max="23" value="0" class="input-field">
+            </div>
+            
+            <div class="form-group">
+                <label for="minutesInput"><i class="fas fa-minuteglass"></i> MINUTES</label>
+                <input type="number" id="minutesInput" min="0" max="59" value="30" class="input-field">
+            </div>
+            
+            <div class="form-group">
+                <label for="secondsInput"><i class="fas fa-stopwatch"></i> SECONDS</label>
+                <input type="number" id="secondsInput" min="0" max="59" value="0" class="input-field">
+            </div>
+            
+            <div class="form-group">
+                <label for="quoteInput"><i class="fas fa-quote-right"></i> CUSTOM MESSAGE</label>
+                <input type="text" id="quoteInput" value="BE READY FOR SOMETHING AMAZING!" class="input-field">
+            </div>
+            
+            <button class="submit-btn" id="applyTimerBtn">
+                <i class="fas fa-check-circle"></i> APPLY SETTINGS
+            </button>
+        </div>
+        
+        <div class="settings-section fade-in">
+            <h3 class="section-title"><i class="fas fa-calculator"></i> DATE CALCULATOR</h3>
+            
+            <div class="form-group">
+                <label for="startDate"><i class="fas fa-calendar-alt"></i> START DATE</label>
+                <input type="date" id="startDate" class="input-field">
+            </div>
+            
+            <div class="form-group">
+                <label for="endDate"><i class="fas fa-calendar-check"></i> END DATE</label>
+                <input type="date" id="endDate" class="input-field">
+            </div>
+            
+            <button class="submit-btn" id="calculateBtn">
+                <i class="fas fa-calculator"></i> CALCULATE DURATION
+            </button>
+            
+            <div class="date-calculator-result" id="calculatorResult">
+                <p>Days between selected dates:</p>
+                <div class="calculator-result-value" id="daysResult">0</div>
+                <button class="submit-btn" id="setAsDaysBtn" style="margin-top: 15px;">
+                    <i class="fas fa-sync-alt"></i> SET AS TIMER DAYS
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="alarm" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
